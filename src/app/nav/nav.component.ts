@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from '../services/modal.service';
 import { Modal } from '../shared/helpers/enums';
+import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +11,7 @@ import { Modal } from '../shared/helpers/enums';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  constructor(private modal: ModalService) {}
+  constructor(private modal: ModalService, public auth: AuthService) {}
 
   ngOnInit(): void {}
 
